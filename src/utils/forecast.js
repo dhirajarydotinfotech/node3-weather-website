@@ -9,7 +9,7 @@ const forecast = (lat, long, callback) => {
         } else if (body.error) {
             callback("Unable to fine location", undefined);
         } else {
-            callback(undefined, `${body.current.weather_descriptions[0]}.  It is currently ${body.current.temperature} degree out. It feels like ${body.current.feelslike} degress out.`);
+            callback(undefined, `${body.current.weather_descriptions[0]}.  It is currently ${body.current.temperature} degree out.Humidity today is ${body.current.humidity}%. It feels like ${body.current.feelslike} degress out.`);
         }
     });
 }
