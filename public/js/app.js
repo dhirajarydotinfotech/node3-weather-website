@@ -8,8 +8,9 @@ weatherForm.addEventListener('submit', (e) => {
     e.preventDefault();
     const location = search.value
     messgaeOne.textContent = 'Loading...';
-    messgaeTwo.textContent = ''
-    fetch(`http://localhost:3001/weather?address=${location}`).then((response) => {
+    messgaeTwo.textContent = '';
+
+    fetch(`/weather?address=${location}`).then((response) => {
         response.json().then((data) => {
             if (data.error) {
                 messgaeOne.textContent = data.error

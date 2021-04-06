@@ -5,7 +5,8 @@ const forecast = require('./utils/forecast');
 const hbs = require('hbs');
 
 const app = express();
-const address = process.argv[2];
+
+const port = process.env.PORT || 3001
 
 
 
@@ -112,7 +113,7 @@ app.get('*', (req, res) => {
     })
 })
 
-app.listen(3001, () => {
-    console.log('Server is up on port 3001');
+app.listen(port, () => {
+    console.log(`Server is up on port ${port}.`);
 });
 
